@@ -84,7 +84,7 @@
   (cond ((eq os-type 'darwin)
          (concat "open " (shell-quote-argument path)))
         ((eq os-type 'windows-nt)
-         (concat "start " (shell-quote-argument path)))
+         (concat "explorer " (shell-quote-argument path)))
         (concat "xdg-open " (shell-quote-argument path))))
 
 (defun org-excalidraw--open-file-from-svg (path)
