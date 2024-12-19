@@ -85,6 +85,8 @@
          (concat "open " (shell-quote-argument path)))
         ((eq os-type 'windows-nt)
          (concat "start \"\" " (shell-quote-argument path)))
+        ((string-match-p "microsoft" (shell-command-to-string "uname -a"))
+         (concat "wslview " (shell-quote-argument path)))
         (concat "xdg-open " (shell-quote-argument path))))
 
 (defun org-excalidraw--open-file-from-svg (path)
